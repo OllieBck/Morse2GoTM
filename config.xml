@@ -2,7 +2,7 @@
 <widget id="org.adaptivedesign.m2g" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="adaptivedesign.org">
     <name>TandemMaster M2G Text-to-Speech</name>
     <description>
-        Text-to-Speech using Responsivetalk and TandemMaster
+        Text-to-Speech using Responsivetalk or Cordova TTS Plugin and TandemMaster
     </description>
     <author email="jason@adaptivedesign.org" href="adaptivedesign.org">
         Adaptive Design Association

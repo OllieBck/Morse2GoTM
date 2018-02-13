@@ -23,6 +23,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        this.initPredict()
     },
 
     // deviceready Event Handler
@@ -52,6 +53,8 @@ var app = {
             //responsiveVoice.speak(lastSpoken, "US English Male");
             TTS.speak({text: lastSpoken, locale: 'en-GB'});
           }
+          // prediction
+          app.handleLetter(textToSpeak)
         });
     },
 
@@ -72,6 +75,42 @@ var app = {
       for (var i = 0; i < nodesToRemove.length; i++){
           phraseField.removeChild(nodesToRemove[i]);
       }
+    },
+
+    //----------------------------------
+    // Text prediction
+    //----------------------------------
+    handleLetter: function(text) {
+      var actextField = document.getElementById('ac-text');
+      var acList = document.getElementById('ac-dropdown');
+      var actext = actextField.value
+      actextField.value = text
+      responses = simpleTest.find(text)
+      if (responses) {
+        acList.innerHTML = (Mustache.to_html(
+            "{{#responses}}<li>{{word}}</li>{{/responses}}"
+          , {responses: responses}
+        ));
+        //input.addClass('ac-open');
+        acList.style.display = 'block'
+      } else {
+        acList.style.display = 'none'
+      }
+    },
+    initPredict: function(){
+      count = 0
+      simpleTest = new Triejs({
+        sort: function() {
+            this.sort(function(a, b) { return b.rank - a.rank; });
+        }
+        , copy: function(data) {
+          return jQuery.extend(true, [], data);
+        }
+      });
+      for (var i = 0, ii = words.length; i < ii; i++) {
+        simpleTest.add(words[i].word, words[i]);
+      }
+      count = words.length
     }
 };
 

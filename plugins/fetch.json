@@ -14,5 +14,21 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-websocket-server": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-websocket-server"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-add-swift-support": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-add-swift-support@1.7.1"
+    },
+    "is_top_level": false,
+    "variables": {}
   }
 }

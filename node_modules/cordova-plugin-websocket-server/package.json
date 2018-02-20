@@ -1,0 +1,99 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-websocket-server",
+        "scope": null,
+        "escapedName": "cordova-plugin-websocket-server",
+        "name": "cordova-plugin-websocket-server",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/jasonbeck/Desktop/DesktopMess/Morse2Go/Morse2GoTM"
+    ]
+  ],
+  "_from": "cordova-plugin-websocket-server@latest",
+  "_id": "cordova-plugin-websocket-server@1.4.8",
+  "_inCache": true,
+  "_location": "/cordova-plugin-websocket-server",
+  "_nodeVersion": "8.9.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-websocket-server-1.4.8.tgz_1514901290972_0.7251251235138625"
+  },
+  "_npmUser": {
+    "name": "becvert",
+    "email": "support@becvertprod.fr"
+  },
+  "_npmVersion": "5.5.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-websocket-server",
+    "scope": null,
+    "escapedName": "cordova-plugin-websocket-server",
+    "name": "cordova-plugin-websocket-server",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-websocket-server/-/cordova-plugin-websocket-server-1.4.8.tgz",
+  "_shasum": "3afd3488c1fc0f0f5c175aaaa0a177feb6365f4f",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-websocket-server",
+  "_where": "/Users/jasonbeck/Desktop/DesktopMess/Morse2Go/Morse2GoTM",
+  "author": {
+    "name": "Sylvain Bréjeon",
+    "url": "https://github.com/becvert"
+  },
+  "bugs": {
+    "url": "https://github.com/becvert/cordova-plugin-websocket-server/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-websocket-server",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova WebSocket Server Plugin",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-Csz128IXGNlwjtUdaLQfWTrJ/hYp70Nvpy7n8sOhHxtzqkSNJXVmR/yP5QAJPzYdUiu2/LztGoNmnQIYcMBYDg==",
+    "shasum": "3afd3488c1fc0f0f5c175aaaa0a177feb6365f4f",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-websocket-server/-/cordova-plugin-websocket-server-1.4.8.tgz"
+  },
+  "gitHead": "0e44bc5995f4e9e28076759a1d95385c90353d51",
+  "homepage": "https://github.com/becvert/cordova-plugin-websocket-server",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova",
+    "plugin",
+    "network",
+    "websocket",
+    "server"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "becvert",
+      "email": "support@becvertprod.com"
+    }
+  ],
+  "name": "cordova-plugin-websocket-server",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/becvert/cordova-plugin-websocket-server.git"
+  },
+  "version": "1.4.8"
+}

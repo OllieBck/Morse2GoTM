@@ -11,6 +11,10 @@
             {
               "xml": "<feature name=\"TTS\"><param name=\"ios-package\" value=\"CDVTTS\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"WebSocketServer\"><param name=\"ios-package\" value=\"WebSocketServer\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -23,6 +27,12 @@
     },
     "cordova-plugin-tts": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "org.adaptivedesign.m2g"
+    },
+    "cordova-plugin-websocket-server": {
+      "PACKAGE_NAME": "org.adaptivedesign.m2g"
     }
   },
   "dependent_plugins": {},
@@ -34,10 +44,20 @@
       "clobbers": [
         "TTS"
       ]
+    },
+    {
+      "id": "cordova-plugin-websocket-server.WebSocketServer",
+      "file": "plugins/cordova-plugin-websocket-server/www/wsserver.js",
+      "pluginId": "cordova-plugin-websocket-server",
+      "clobbers": [
+        "cordova.plugins.wsserver"
+      ]
     }
   ],
   "plugin_metadata": {
     "cordova-plugin-whitelist": "1.3.3",
-    "cordova-plugin-tts": "0.2.3"
+    "cordova-plugin-tts": "0.2.3",
+    "cordova-plugin-add-swift-support": "1.7.1",
+    "cordova-plugin-websocket-server": "1.4.8"
   }
 }

@@ -12,7 +12,14 @@
     },
     "cordova-plugin-tts": {
       "PACKAGE_NAME": "org.adaptivedesign.m2g"
+    },
+    "cordova-plugin-websocket-server": {
+      "PACKAGE_NAME": "org.adaptivedesign.m2g"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "org.adaptivedesign.m2g"
+    }
+  }
 }

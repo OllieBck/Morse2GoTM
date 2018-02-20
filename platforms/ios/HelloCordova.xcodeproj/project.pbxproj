@@ -17,6 +17,13 @@
 		3047A5141AB8059700498E2A /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5111AB8059700498E2A /* build.xcconfig */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
 		51EF0F2D2BBF40DABBCD9F8B /* CDVTTS.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A2ACD8B86C48B1B6A668A6 /* CDVTTS.m */; };
+		5958F0EE23F4407FB16C918D /* WebSocketServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F571F990E9042F2A2B17183 /* WebSocketServer.swift */; };
+		274C5270F09941A09F17A06D /* libPocketSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF9553353D47A0B48B0540 /* libPocketSocket.a */; };
+		9162D4B4220448A6AC2DC164 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E615E283A404FB5C3462E /* Interface.swift */; };
+		635C02A225BE417493D1C182 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AD71BE33644A7DA53E409B /* Foundation.framework */; };
+		23944E9146134358873C2864 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E728B0B0D8A8482BBEB8DAB7 /* CFNetwork.framework */; };
+		41367212F8304A649E4D76F8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACF3A378C9F424681C047C4 /* Security.framework */; };
+		BE82A59072964121B19B2C33 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7DCDFF4CD7422F8FE9F861 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +66,17 @@
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		34A2ACD8B86C48B1B6A668A6 /* CDVTTS.m */ = {isa = PBXFileReference; name = "CDVTTS.m"; path = "cordova-plugin-tts/CDVTTS.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		5576BAD64262496E8D37D7F1 /* CDVTTS.h */ = {isa = PBXFileReference; name = "CDVTTS.h"; path = "cordova-plugin-tts/CDVTTS.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		5F571F990E9042F2A2B17183 /* WebSocketServer.swift */ = {isa = PBXFileReference; name = "WebSocketServer.swift"; path = "cordova-plugin-websocket-server/WebSocketServer.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
+		D5CF9553353D47A0B48B0540 /* libPocketSocket.a */ = {isa = PBXFileReference; name = "libPocketSocket.a"; path = "HelloCordova/Plugins/cordova-plugin-websocket-server/libPocketSocket.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		D02E615E283A404FB5C3462E /* Interface.swift */ = {isa = PBXFileReference; name = "Interface.swift"; path = "cordova-plugin-websocket-server/Interface.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
+		CA45990B39244081A1B628DB /* WebSocketServer-Bridging-Header.h */ = {isa = PBXFileReference; name = "WebSocketServer-Bridging-Header.h"; path = "cordova-plugin-websocket-server/WebSocketServer-Bridging-Header.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		45C7939F3EB849BF85C9C6D9 /* PSWebSocket.h */ = {isa = PBXFileReference; name = "PSWebSocket.h"; path = "cordova-plugin-websocket-server/PSWebSocket.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		64331B25D2CF4F8BBBFDE610 /* PSWebSocketServer.h */ = {isa = PBXFileReference; name = "PSWebSocketServer.h"; path = "cordova-plugin-websocket-server/PSWebSocketServer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		FFFB7B8B38854EF1BB3C94FC /* PSWebSocketTypes.h */ = {isa = PBXFileReference; name = "PSWebSocketTypes.h"; path = "cordova-plugin-websocket-server/PSWebSocketTypes.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		E6AD71BE33644A7DA53E409B /* Foundation.framework */ = {isa = PBXFileReference; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		E728B0B0D8A8482BBEB8DAB7 /* CFNetwork.framework */ = {isa = PBXFileReference; name = "CFNetwork.framework"; path = "System/Library/Frameworks/CFNetwork.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		0ACF3A378C9F424681C047C4 /* Security.framework */ = {isa = PBXFileReference; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		9F7DCDFF4CD7422F8FE9F861 /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +85,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
+				274C5270F09941A09F17A06D /* libPocketSocket.a in Frameworks */,
+				635C02A225BE417493D1C182 /* Foundation.framework in Frameworks */,
+				23944E9146134358873C2864 /* CFNetwork.framework in Frameworks */,
+				41367212F8304A649E4D76F8 /* Security.framework in Frameworks */,
+				BE82A59072964121B19B2C33 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +160,11 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D5CF9553353D47A0B48B0540 /* libPocketSocket.a */,
+				E6AD71BE33644A7DA53E409B /* Foundation.framework */,
+				E728B0B0D8A8482BBEB8DAB7 /* CFNetwork.framework */,
+				0ACF3A378C9F424681C047C4 /* Security.framework */,
+				9F7DCDFF4CD7422F8FE9F861 /* libz.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -164,6 +192,12 @@
 			children = (
 				34A2ACD8B86C48B1B6A668A6 /* CDVTTS.m */,
 				5576BAD64262496E8D37D7F1 /* CDVTTS.h */,
+				5F571F990E9042F2A2B17183 /* WebSocketServer.swift */,
+				D02E615E283A404FB5C3462E /* Interface.swift */,
+				CA45990B39244081A1B628DB /* WebSocketServer-Bridging-Header.h */,
+				45C7939F3EB849BF85C9C6D9 /* PSWebSocket.h */,
+				64331B25D2CF4F8BBBFDE610 /* PSWebSocketServer.h */,
+				FFFB7B8B38854EF1BB3C94FC /* PSWebSocketTypes.h */,
 			);
 			name = Plugins;
 			path = "HelloCordova/Plugins";
@@ -277,6 +311,8 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				51EF0F2D2BBF40DABBCD9F8B /* CDVTTS.m in Sources */,
+				5958F0EE23F4407FB16C918D /* WebSocketServer.swift in Sources */,
+				9162D4B4220448A6AC2DC164 /* Interface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +348,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				PRODUCT_NAME = "HelloCordova";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/HelloCordova/Plugins/cordova-plugin-websocket-server\"",
+				);
 			};
 			name = Debug;
 		};
@@ -334,6 +374,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				PRODUCT_NAME = "HelloCordova";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/HelloCordova/Plugins/cordova-plugin-websocket-server\"",
+				);
 			};
 			name = Release;
 		};

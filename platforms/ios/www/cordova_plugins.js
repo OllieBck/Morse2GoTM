@@ -23,7 +23,8 @@ module.exports.metadata =
   "cordova-plugin-whitelist": "1.3.3",
   "cordova-plugin-tts": "0.2.3",
   "cordova-plugin-add-swift-support": "1.7.1",
-  "cordova-plugin-websocket-server": "1.4.8"
+  "cordova-plugin-websocket-server": "1.4.8",
+  "cordova-plugin-websocket": "0.12.2"
 };
 // BOTTOM OF METADATA
 });

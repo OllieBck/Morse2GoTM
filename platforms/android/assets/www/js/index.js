@@ -18,54 +18,119 @@
  */
 
 var lastSpoken;
+var connectedAddress = [];
 //var wsserver = cordova.plugins.wsserver;
 //var host = "192.168.1.9";
 //var ws = new WebSocket('ws://' + host + ':8787');
 
 var app = {
     // Application Constructor
+/*
     initialize: function() {
-        alert('here');
-        document.addEventListener('deviceready', function(){
-          /*var wsserver = cordova.plugins.wsserver;
-          wsserver.start(8787, {
-           // WebSocket Server handlers
-             'onFailure' :  function(addr, port, reason) {
-               alert('Stopped listening on %s:%d. Reason: %s', addr, port, reason);
-             },
-           // WebSocket Connection handlers
-           'onOpen' : function(conn) {
-             alert('A user connected from %s', conn.remoteAddr);
-           },
-           'onMessage' : function(conn, msg) {
-               alert(conn, msg);
-           },
-           'onClose' : function(conn, code, reason, wasClean) {
-               alert('A user disconnected from %s', conn.remoteAddr);
-           },
-           // Other options
-           // 'origins' : [ 'file://' ], // validates the 'Origin' HTTP Header.
-           // 'protocols' : [ 'my-protocol-v1', 'my-protocol-v2' ], // validates the 'Sec-WebSocket-Protocol' HTTP Header.
-           // 'tcpNoDelay' : true // disables Nagle's algorithm.
-           }, function onStart(addr, port) {
-               alert('Listening on ' + addr + ':' port);
-           }, function onDidNotStart(reason) {
-               alert('Did not start. Reason: %s', reason);
-           });
-        */ alert('now here');}, false);
-      },
+        //alert('here');
+        document.addEventListener('deviceready', function() {
+          var ws = new WebSocket('ws://192.168.1.50:8787');
+            ws.onopen = function () {
+                alert('open');
+                this.send('hello');// transmit "hello" after connecting
+                app.morse2go(ws);
+            };
 
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
-    onDeviceReady: function() {
-        alert("here now");
-        this.morse2go();
+            ws.onmessage = function (event) {
+                alert(event.data);    // will be "hello"
+                this.close();
+              };
+
+            ws.onerror = function () {
+                alert('error occurred!');
+              };
+
+            ws.onclose = function (event) {
+                alert('close code=' + event.code);
+                app.initialize();
+              };
+            }, false);
+      },*/
+
+    initialize: function(){
+      document.addEventListener('deviceready', function(){
+      var wsserver = cordova.plugins.wsserver;
+      wsserver.start(8787, {
+   // WebSocket Server handlers
+      'onFailure' : function(addr, port, reason) {
+        //alert('Stopped listening on ' + addr + ":" + port + ". Reason: " + reason);
+        app.morse2goNoWs();
+   },
+   // WebSocket Connection handlers
+      'onOpen' : function(conn) {
+       /* conn: {
+        'uuid' : '8e176b14-a1af-70a7-3e3d-8b341977a16e',
+        'remoteAddr' : '192.168.1.10',
+        'acceptedProtocol' : 'my-protocol-v1',
+        'httpFields' : {...},
+        'resource' : '/?param1=value1&param2=value2'
+        } */
+       //alert('A user connected from ' + conn.remoteAddr);
+       connectedAddress.push(conn.uuid);
+       //alert(connectedAddress[0]);
+     },
+      'onMessage' : function(conn, msg) {
+       //alert(msg);
+       //alert('got a message');
+     },
+      'onClose' : function(conn, code, reason, wasClean) {
+       //alert('A user disconnected from ' + conn.remoteAddr);
+       var arrayRemove = connectedAddress.indexOf(conn.uuid);
+       if (arrayRemove > -1){
+         connectedAddress.splice(arrayRemove, 1);
+       }
+       if (connectedAddress.length == 0){
+         app.morse2goNoWs();
+       }
+     },
+   // Other options
+   /*
+      'origins' : [ 'file://' ], // validates the 'Origin' HTTP Header.
+      'protocols' : [ 'my-protocol-v1', 'my-protocol-v2' ], // validates the 'Sec-WebSocket-Protocol' HTTP Header.
+      'tcpNoDelay' : true // disables Nagle's algorithm. */
+      }, function onStart(addr, port) {
+        //alert('Listening on ' + addr + ' ' + port);
+        app.morse2go(wsserver);
+      }, function onDidNotStart(reason) {
+        //alert('Did not start. Reason: ' + reason);
+        app.morse2goNoWs();
+      });
+      }, false);
     },
 
-    // Update DOM on a Received Event
-    morse2go: function() {
+    onDeviceReady: function() {
+      //alert("device ready");
+      this.morse2go();
+    },
+
+    morse2go: function(ws) {
+        app.focusElement(); // force focus to input box
+        window.addEventListener('keyup', function(event){
+          var textToSpeak = document.getElementById('TextField').value;
+          //alert(event.keyCode);
+          if (event.keyCode == 13 || event.keyCode == 38){
+            //responsiveVoice.speak(textToSpeak, "US English Male");
+            lastSpoken = textToSpeak;
+            document.getElementById('TextField').value = '';
+            app.displayPhrase(lastSpoken);
+            ws.send({'uuid':connectedAddress[0]}, textToSpeak);
+            TTS.speak({text: textToSpeak, locale: 'en-GB'});
+          }
+
+          if (event.keyCode == 40){
+            //event.preventDefault();
+            //responsiveVoice.speak(lastSpoken, "US English Male");
+            TTS.speak({text: lastSpoken, locale: 'en-GB'});
+          }
+        });
+    },
+
+    morse2goNoWs: function() {
         app.focusElement(); // force focus to input box
         window.addEventListener('keyup', function(event){
           var textToSpeak = document.getElementById('TextField').value;
@@ -104,34 +169,6 @@ var app = {
           phraseField.removeChild(nodesToRemove[i]);
       }
     }
-    /*
-    startServer: function(){
-        var wsserver = cordova.plugins.wsserver;
-        wsserver.start(8787, {
-         // WebSocket Server handlers
-           'onFailure' :  function(addr, port, reason) {
-             alert('Stopped listening on %s:%d. Reason: %s', addr, port, reason);
-           },
-         // WebSocket Connection handlers
-         'onOpen' : function(conn) {
-           alert('A user connected from %s', conn.remoteAddr);
-         },
-         'onMessage' : function(conn, msg) {
-             alert(conn, msg);
-         },
-         'onClose' : function(conn, code, reason, wasClean) {
-             alert('A user disconnected from %s', conn.remoteAddr);
-         },
-         // Other options
-         // 'origins' : [ 'file://' ], // validates the 'Origin' HTTP Header.
-         // 'protocols' : [ 'my-protocol-v1', 'my-protocol-v2' ], // validates the 'Sec-WebSocket-Protocol' HTTP Header.
-         // 'tcpNoDelay' : true // disables Nagle's algorithm.
-         }, function onStart(addr, port) {
-             alert('Listening on ' + addr + ':' port);
-         }, function onDidNotStart(reason) {
-             alert('Did not start. Reason: %s', reason);
-         });
-       }*/
 };
 
 app.initialize();

@@ -15,6 +15,9 @@
     },
     "cordova-plugin-websocket-server": {
       "PACKAGE_NAME": "org.adaptivedesign.m2g"
+    },
+    "cordova-plugin-websocket": {
+      "PACKAGE_NAME": "org.adaptivedesign.m2g"
     }
   },
   "dependent_plugins": {
